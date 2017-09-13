@@ -2,7 +2,7 @@
 Python logger for Keysight/Agilent 34411A Digital Multimeter
 
 
-Usage
+## Usage
 
 Set your multimeter address statically in `scope.py`.
 
