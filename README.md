@@ -14,4 +14,4 @@ python scope.py
 
 Press <kbd>CTRL</kbd><kbd>C</kbd> to end capture.
 
-The script will generate a file like `reading-2017-09-13-15/01/35.300354.txt` with one reading per line.
+The script will generate a file like `reading-2017-09-13-15-01-35.300354.csv` with timestamps (in seconds) against readings, which are in SI units.
