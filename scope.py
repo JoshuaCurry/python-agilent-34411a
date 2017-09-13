@@ -8,6 +8,7 @@
 import socket
 from datetime import datetime
 import atexit
+import time
 
 HOST = '192.168.1.10'
 PORT = 5025
@@ -17,7 +18,7 @@ s.connect((HOST, PORT))
 def readout():
 	print "Writing data to file..."
 	f.write('\n'.join(dat))
-	print "Closing File...."
+	print "Closing File. Data stored in " + thefile
 	f.close()
 	exit()
 
