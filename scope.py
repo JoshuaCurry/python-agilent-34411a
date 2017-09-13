@@ -22,8 +22,10 @@ def readout():
 	exit()
 
 atexit.register(readout)
+datestring = str(datetime.now()).replace(" ", "-")
+datestring = datestring.replace("/", "-")
 
-thefile = "reading-"+str(datetime.now()).replace(" ", "-")+".txt"
+thefile = "reading-"+datestring+".csv"
 print "Opening " + thefile
 
 f = open(thefile, "w")
@@ -33,9 +35,13 @@ dat = []
 
 print "Reading from instrument to RAM..."
 print "Press CTRL-C to stop"
+
+start = time.time()
 while 1:
 	s.sendall("READ?\r\n")
 	data = s.recv(1024)
 	i = i + 1	
-	dat.append(data.rstrip())
+	thedata = data.rstrip()
+	thedata = thedata.replace("+", "")
+	dat.append(str(time.time()-start)+","+thedata)
 s.close()
